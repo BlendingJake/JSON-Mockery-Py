@@ -27,6 +27,7 @@ class Generator:
         return self._exhausted
 
     def one(self):
+        self._exhausted = True
         if self.nullable and random() <= self.null_probability:
             return None
         else:
